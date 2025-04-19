@@ -10,6 +10,8 @@ const router = Router();
 router.get("/", categoriaController.getCategorias);
 /* CREATE */
 router.post("/", categoriaController.postCategorias);
+/* Ruta que recibe un parámetro */
+router.get("/:id", categoriaController.getCategory);
 
 /* Hacemos disponible a router en toda la app */
 
