@@ -1,4 +1,4 @@
-import {Router} from "express";
+import { Router } from "express";
 import { methodHTTP as categoriaController } from "../controllers/categoria.controllers.js";
 
 /* Creamos el enrutador */
@@ -6,8 +6,10 @@ import { methodHTTP as categoriaController } from "../controllers/categoria.cont
 const router = Router();
 
 /* Configuramos respuesta desde server método http Get */
-
-router.get("/", categoriaController.getCategorias)
+/* READ */
+router.get("/", categoriaController.getCategorias);
+/* CREATE */
+router.post("/", categoriaController.postCategorias);
 
 /* Hacemos disponible a router en toda la app */
 
