@@ -10,8 +10,12 @@ const router = Router();
 router.get("/", categoriaController.getCategorias);
 /* CREATE */
 router.post("/", categoriaController.postCategorias);
-/* Ruta que recibe un parámetro */
+/* Ruta que recibe un parámetro (READ - una sola fila) */
 router.get("/:id", categoriaController.getCategory);
+/* DELETE - Ruta que recibe parametro ID de categoria a borrar */
+router.delete("/:id", categoriaController.deleteCategory);
+/* UPDATE - Ruta que recibe parametro tanto el cuerpo como el ID a actualizar */
+router.put("/:id", categoriaController.updateCategorias);
 
 /* Hacemos disponible a router en toda la app */
 
