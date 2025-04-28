@@ -1,13 +1,10 @@
 import getConnection from "./../db/database.js";
 
-const deleteCategory = async (req, res) => {
+const getEmpleados = async (req, res) => {
   try {
-    console.log("ID de categoría a borrar", req.params);
-    const { id } = req.params;
     const connection = await getConnection();
     const result = await connection.query(
-      "DELETE FROM categorias WHERE CategoriaID = ?",
-      id
+      "SELECT EmpleadoID, Nombre, Apellido, Titulo, FechaNacimiento FROM empleados"
     );
     res.json(result);
   } catch (error) {
@@ -16,5 +13,5 @@ const deleteCategory = async (req, res) => {
 };
 
 export const methodHTTP = {
-  deleteCategory
-};
+    getEmpleados
+  };
