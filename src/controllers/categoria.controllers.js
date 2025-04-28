@@ -18,3 +18,4 @@ const deleteCategory = async (req, res) => {
 export const methodHTTP = {
   deleteCategory
 };
+
